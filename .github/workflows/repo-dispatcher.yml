@@ -82,6 +82,11 @@ jobs:
           -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
           -H "Accept: application/vnd.github.everest-preview+json" \
           -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
+          -d '{"event_type": "rockchip_rk3588_armv8 ${{ github.event.inputs.param }}", "client_payload": {"target": "rockchip_rk3588_armv8"}}'
+          curl \
+          -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
           -d '{"event_type": "bcm27xx_bcm2711 ${{ github.event.inputs.param }}", "client_payload": {"target": "bcm27xx_bcm2711"}}'
           curl \
           -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
